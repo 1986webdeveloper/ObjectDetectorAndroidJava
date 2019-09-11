@@ -13,11 +13,11 @@ Requirement
 - Tensorflow (if you have not installed you can download it from here : https://www.tensorflow.org/install)
 
 Here how to use it
-- Add this line in your project level build.gradle file
+- Add below code in your project level build.gradle file
 ```
 classpath 'org.apache.httpcomponents:httpclient:4.5.4'
 ```
-- Add these lines on top in your app level build.gradle file
+- Add below code on top of your app level build.gradle file
 ```
 project.buildDir = 'gradleBuild'
 getProject().setBuildDir('gradleBuild')
@@ -26,19 +26,21 @@ project.ext.ASSET_DIR = projectDir.toString() + '/assets'
 project.ext.TMP_DIR   = project.buildDir.toString() + '/downloads'
 apply from: "download-models.gradle"
 ```
-- Add these lines inside android{}
+- Add sourceSets inside android
 ```
-sourceSets {
-        main {
-            assets.srcDirs = [project.ext.ASSET_DIR]
-            jniLibs.srcDirs = ['libs']
-        }
+android{
+        sourceSets {
+           main {
+               assets.srcDirs = [project.ext.ASSET_DIR]
+                jniLibs.srcDirs = ['libs']
+            }
 
-        debug.setRoot('build-types/debug')
-        release.setRoot('build-types/release')
-    }
+          debug.setRoot('build-types/debug')
+          release.setRoot('build-types/release')
+          }
+}
 ```
-- Add this library in your dependencies
+- Add tensorflow in your dependencies
 ```
 implementation 'org.tensorflow:tensorflow-android:1.13.1'
 ```
