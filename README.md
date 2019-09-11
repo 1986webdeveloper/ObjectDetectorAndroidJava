@@ -8,7 +8,7 @@ App gets the current frames from the camera and it uses this frame to get predic
 A device running Android 5.0 (API 21) or higher is required to run the demo due to the use of the camera2 API.
 
 
-Requirement
+<b>Requirement</b>
 - NDK (if you have not installed you can download it from here : https://developer.android.com/ndk/downloads)
 - Tensorflow (if you have not installed you can download it from here : https://www.tensorflow.org/install)
 
@@ -52,6 +52,6 @@ trackingOverlay.addCallback(
         });
 ```
 
-Output:
+<b>Output:</b>
 
 ![alt text](https://github.com/1986webdeveloper/ObjectDetectorAndroidKotlin/blob/master/ezgif-4-0c8fe35564d4.gif)
